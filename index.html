@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan Habib & Adiba</title>
+    <meta name="description" content="Undangan Pernikahan Habib & Adiba - Minggu, 16 Agustus 2026" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Cormorant Garamond"', 'serif'],
+              body: ['Lato', 'sans-serif'],
+            },
+            colors: {
+              cream: '#FDF8F3',
+              'cream-dark': '#F5EDE4',
+              gold: '#D4AF37',
+              'gold-light': '#E8C872',
+              'warm-brown': '#5D4E37',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { @apply bg-cream text-warm-brown font-body; }
+      
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+      .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+      .delay-400 { animation-delay: 400ms; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function App() {
+        const [rsvpData, setRsvpData] = useState({
+          namaPenerima: '',
+          noHp: '',
+          alamat: ''
+        });
+        const [submitted, setSubmitted] = useState(false);
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          setSubmitted(true);
+        };
+
+        const handleChange = (e) => {
+          const { name, value } = e.target;
+          setRsvpData(prev => ({ ...prev, [name]: value }));
+        };
+
+        return (
+          <div className="min-h-screen bg-cream">
+            {/* Hero Section */}
+            <section className="min-h-screen flex flex-col items-center justify-center px-4 py-16 text-center bg-gradient-to-b from-cream to-cream-dark">
+              <div className="animate-fade-in">
+                <p className="text-sm uppercase tracking-[0.3em] text-warm-brown/70 mb-4">Undangan Pernikahan</p>
+                <h1 className="font-display text-5xl md:text-7xl text-warm-brown mb-2">Habib</h1>
+                <p className="text-2xl text-gold">&</p>
+                <h1 className="font-display text-5xl md:text-7xl text-warm-brown mb-6">Adiba</h1>
+                <div className="w-24 h-px bg-gold mx-auto mb-6"></div>
+                <p className="text-lg text-warm-brown/80">Minggu, 16 Agustus 2026</p>
+              </div>
+            </section>
+
+            {/* Guest Name Placeholder */}
+            <section className="py-12 px-4 bg-cream-dark">
+              <div className="max-w-2xl mx-auto text-center">
+                <p className="font-display text-2xl md:text-3xl text-warm-brown animate-fade-in-up">
+                  Kepada Bapak/Ibu/Saudara/i,
+                </p>
+                <p className="font-display text-2xl md:text-3xl text-warm-brown mt-2 animate-fade-in-up delay-100">
+                  Nama Tamu
+                </p>
+              </div>
+            </section>
+
+            {/* Invitation Text */}
+            <section className="py-16 px-4 bg-cream">
+              <div className="max-w-2xl mx-auto text-center">
+                <p className="font-display text-xl md:text-2xl text-warm-brown/80 leading-relaxed animate-fade-in-up">
+                  Kami berharap Anda menjadi bagian dari hari istimewa kami
+                </p>
+              </div>
+            </section>
+
+            {/* Event Details */}
+            <section className="py-16 px-4 bg-cream-dark">
+              <div className="max-w-2xl mx-auto">
+                <h2 className="font-display text-3xl md:text-4xl text-center text-warm-brown mb-12 animate-fade-in-up">
+                  Detail Acara
+                </h2>
+                
+                <div className="space-y-8">
+                  <div className="text-center p-8 border border-gold/30 rounded-lg bg-cream/50 animate-fade-in-up delay-100">
+                    <p className="text-sm uppercase tracking-[0.2em] text-gold mb-2">Akad Nikuh</p>
+                    <p className="font-display text-2xl text-warm-brown">08:00 WIB</p>
+                  </div>
+                  
+                  <div className="text-center p-8 border border-gold/30 rounded-lg bg-cream/50 animate-fade-in-up delay-200">
+                    <p className="text-sm uppercase tracking-[0.2em] text-gold mb-2">Resepsi</p>
+                    <p className="font-display text-2xl text-warm-brown">10:00 WIB - Selesai</p>
+                  </div>
+                  
+                  <div className="text-center p-8 border border-gold/30 rounded-lg bg-cream/50 animate-fade-in-up delay-300">
+                    <p className="text-sm uppercase tracking-[0.2em] text-gold mb-2">Lokasi</p>
+                    <p className="font-display text-xl text-warm-brown">Kediaman Mempelai Wanita</p>
+                    <p className="text-warm-brown/70">Ds Pagu, Wates, Kediri</p>
+                    <p className="text-warm-brown/70">Jawa Timur</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Love Story Timeline */}
+            <section className="py-16 px-4 bg-cream">
+              <div className="max-w-2xl mx-auto">
+                <h2 className="font-display text-3xl md:text-4xl text-center text-warm-brown mb-12 animate-fade-in-up">
+                  Cerita Kami
+                </h2>
+                
+                <div className="space-y-8">
+                  <div className="flex flex-col items-center text-center animate-fade-in-up delay-100">
+                    <div className="w-3 h-3 bg-gold rounded-full mb-4"></div>
+                    <p className="font-display text-xl text-warm-brown">Awal Cerita</p>
+                    <p className="text-warm-brown/70">Met at Malioboro, Yogyakarta</p>
+                    <p className="text-gold text-sm">May 14, 2023</p>
+                  </div>
+                  
+                  <div className="flex justify-center">
+                    <div className="w-px h-8 bg-gold/30"></div>
+                  </div>
+                  
+                  <div className="flex flex-col items-center text-center animate-fade-in-up delay-200">
+                    <div className="w-3 h-3 bg-gold rounded-full mb-4"></div>
+                    <p className="font-display text-xl text-warm-brown">Lamaran</p>
+                    <p className="text-gold text-sm">February 3, 2025</p>
+                  </div>
+                  
+                  <div className="flex justify-center">
+                    <div className="w-px h-8 bg-gold/30"></div>
+                  </div>
+                  
+                  <div className="flex flex-col items-center text-center animate-fade-in-up delay-300">
+                    <div className="w-3 h-3 bg-gold rounded-full mb-4"></div>
+                    <p className="font-display text-xl text-warm-brown">Pernikahan</p>
+                    <p className="text-gold text-sm">August 16, 2026</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* RSVP Section */}
+            <section className="py-16 px-4 bg-cream-dark">
+              <div className="max-w-xl mx-auto">
+                <h2 className="font-display text-3xl md:text-4xl text-center text-warm-brown mb-4 animate-fade-in-up">
+                  RSVP
+                </h2>
+                <p className="text-center text-warm-brown/70 mb-12 animate-fade-in-up delay-100">
+                  Konfirmasi kehadiran Anda
+                </p>
+                
+                {submitted ? (
+                  <div className="text-center p-8 bg-cream/50 rounded-lg border border-gold/30 animate-fade-in">
+                    <p className="font-display text-xl text-warm-brown">Terima kasih!</p>
+                    <p className="text-warm-brown/70 mt-2">Konfirmasi Anda telah kami terima.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="animate-fade-in-up delay-100">
+                      <label className="block text-sm text-warm-brown/70 mb-2">Nama Penerima</label>
+                      <input
+                        type="text"
+                        name="namaPenerima"
+                        value={rsvpData.namaPenerima}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-cream border border-gold/30 rounded-lg text-warm-brown focus:outline-none focus:border-gold"
+                      />
+                    </div>
+                    
+                    <div className="animate-fade-in-up delay-200">
+                      <label className="block text-sm text-warm-brown/70 mb-2">No. HP</label>
+                      <input
+                        type="tel"
+                        name="noHp"
+                        value={rsvpData.noHp}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-cream border border-gold/30 rounded-lg text-warm-brown focus:outline-none focus:border-gold"
+                      />
+                    </div>
+                    
+                    <div className="animate-fade-in-up delay-300">
+                      <label className="block text-sm text-warm-brown/70 mb-2">Alamat</label>
+                      <textarea
+                        name="alamat"
+                        value={rsvpData.alamat}
+                        onChange={handleChange}
+                        required
+                        rows={3}
+                        className="w-full px-4 py-3 bg-cream border border-gold/30 rounded-lg text-warm-brown focus:outline-none focus:border-gold resize-none"
+                      />
+                    </div>
+                    
+                    <button
+                      type="submit"
+                      className="w-full py-4 bg-gold text-cream font-display text-lg rounded-lg hover:bg-gold-light transition-colors duration-300 animate-fade-in-up delay-400"
+                    >
+                      Kirim Konfirmasi
+                    </button>
+                  </form>
+                )}
+              </div>
+            </section>
+
+            {/* Closing */}
+            <section className="py-16 px-4 bg-cream text-center">
+              <h2 className="font-display text-3xl md:text-4xl text-warm-brown mb-8 animate-fade-in-up">
+                Habib & Adiba
+              </h2>
+              <p className="text-sm text-warm-brown/60 animate-fade-in-up delay-100">
+                Made with ❤️ by <a href="https://wekita.id" className="text-gold hover:underline">Wekita.id</a>
+              </p>
+            </section>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
